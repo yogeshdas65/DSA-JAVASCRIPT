@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert</title>
+    <script>
+      ////////////0////1///2///3///4///5, while inserting we have to do it reverce mode (data[i+1] = data[i]) , by sifting outerside and
+      let data = [60, 30, 10, 67, 40];
+      let newEl = 70;
+      let position = 2;
+      console.log("Before Insert", data);
+      for (let i = data.length - 1; i >= 0; i--) {
+        console.log(data[i]);
+        if (i >= position) {
+          data[i + 1] = data[i]; //shifting array element from backside
+          if (i == position) {
+            data[i] = newEl; // instering the value
+          }
+        }
+      }
+      console.log("After Insert", data);
+    </script>
+  </head>
+  <body>
+    <h5>Enter the Position</h5>
+    <input type="text" id="position"/>
+    <h5>Enter the Integer</h5>
+    <input type="text" id="newEl"/>
+    <button onclick="insertEl()">Insert</button>
+    <!-- <h1>Insert</h1>
+    <h2>data = [60, 30, 10, 67, 40];</h2>
+    <h2>data = [60, 30, 10, 67, 40 , ___ ];  shifting all element from backside</h2>
+    <h2>data = [60, 30, 10, 10, 67, 40 ];</h2>
+    <h2>data = [60, 30, 70, 10, 67, 40 ];</h2> -->
+  </body>
+</html>

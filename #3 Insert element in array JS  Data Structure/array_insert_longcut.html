@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert</title>
+    <script>
+      const insertEl = () => {
+        let position = document.getElementById("position").value;
+        let actposition =  position - 1 //index start with 1
+        let newEl = document.getElementById("newEl").value;
+        let data = [60, 30, 10, 67, 40];
+        console.log("Before Insert", data);
+
+        for (let i = data.length - 1; i >= 0; i--) {
+          console.log(data[i]);
+          if (i >= actposition) {
+            data[i + 1] = data[i]; //shifting array element from backside
+            if (i == actposition) {
+              data[i] = newEl; // instering the value
+            }
+          }
+        }
+        console.log("After Insert", data);
+        document.getElementById("result").innerHTML = `Array: [${data.join(
+          ", "
+        )}]`;
+      };
+    </script>
+  </head>
+  <body>
+    <h5>Enter the Position</h5>
+    <input type="text" id="position" />
+    <h5>Enter the Integer</h5>
+    <input type="text" id="newEl" />
+    <button onclick="insertEl()">Insert</button>
+    <h3>Index: [1,2,3,4,5]</h3>
+    <h3>Array: [60, 30, 10, 67, 40]</h3>
+    <div id="result"></div>
+  </body>
+</html>
