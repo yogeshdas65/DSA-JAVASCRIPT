@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete</title>
+  </head>
+  <script>
+    const data = [20, 63, 74, 15, 21, 36, 96];
+    console.log("Before delete", data);
+
+    const removeEl = () => {
+      const data = [20, 63, 74, 15, 21, 36, 96];
+      console.log("Before delete", data);
+      let position = parseInt(document.getElementById("position").value);
+      for (i = position; i < data.length - 1; i++) {
+        console.log(`accessing ${i} element:-`, data[i]);
+        data[i] = data[i + 1];
+        console.log(`shifted ${i + 1} element to ${i} `, data);
+      }
+      data.length = data.length - 1;
+      console.log("After deleted", data);
+    };
+    
+  </script>
+  <body>
+    <h1>Delete</h1>
+    <input type="text" id="position" />
+    <button onclick="removeEl()">Remove</button>
+  </body>
+</html>
