@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ACCESSING</title>
     <script>
       let data = [14, 26, 7, 50, 5, 3, 6, 74, 98, 46, 42];
       //print value
@@ -11,11 +11,10 @@
         document.write(`ARRAY ${[i]} is  ${data[i]} <br>`);
       }
       //Get Element by passing input
-      //parseInt(string, radix);string: The string to be converted into an integer.radix (optional): An integer between 2 and 36 that represents the base of the numeral system. If not specified, the default is 10 (decimal).
       //typeof parseInt(el) === "integer" <-- i learn
       function getElement() {
         let el = document.getElementById("element").value;
-        if (el < data.length && typeof parseInt(el) === "integer") {
+        if (el < data.length && typeof parseInt(el) === "number" && el >= 0) {
           alert(data[el]);
         } else {
           alert("please enter valid entry");

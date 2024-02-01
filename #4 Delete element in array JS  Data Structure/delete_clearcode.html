@@ -8,12 +8,20 @@
   <script>
     const data = [20, 63, 74, 15, 21, 36, 96];
     console.log("Before delete", data);
-
     let position = 3;
+
+    //Long-Cut Method
+  
     for (i = position; i < data.length - 1; i++) {
       data[i] = data[i + 1];
     }
     data.length = data.length - 1;
+    console.log("After deleted", data);
+
+    //Short-cut Method
+    
+    let howManyToDelete = 1
+    data.splice(position,howManyToDelete)
     console.log("After deleted", data);
   </script>
   <body>

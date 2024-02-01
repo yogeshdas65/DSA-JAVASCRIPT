@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merging</title>
+  </head>
+  <body>
+    <h1>Merge</h1>
+    <h3 id="merged"></h3>
+
+    <script>
+      const data = [5, 10, 15, 20, 25];
+      const data2 = [3, 6, 9, 12, 15];
+      const data3 = [];
+
+      for (let i = 0; i < data.length; i++) {
+        data3[i] = data[i];
+      }
+      for (let i = 0; i < data2.length; i++) {
+        data3[data.length + i] = data2[i];
+      }
+      console.log("Total data after Merging:-", data3);
+      document.getElementById("merged").innerHTML = `Array: [${data3.join(
+        ", "
+      )}]`;
+    </script>
+  </body>
+</html>
