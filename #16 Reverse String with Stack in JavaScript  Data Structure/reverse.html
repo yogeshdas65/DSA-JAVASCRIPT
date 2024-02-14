@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse</title>
+    <script>
+      let data = [];
+      let currentSize = data.length;
+
+      push = (newVal) => {
+        data[currentSize] = newVal;
+        currentSize++;
+      };
+      pop = () => {
+        if (currentSize > 0) {
+        let lastItem = data[currentSize - 1];
+        currentSize -= 1;
+        data.length = currentSize;
+        return lastItem;
+    } else {
+        return undefined; // Or handle the case when array is empty
+    }
+      };
+
+      reverse = (val) => {
+        console.log("want to reverse", val);
+        for (i = 0; i < val.length; i++) {
+          push(val[i]);
+        }
+        let count = 0;
+        console.log(val.length);
+        let reverseArray = []
+        for (i = 0; i < val.length; i++) {
+          console.log(count++, "popValue", pop());
+          reverseArray.push(pop());
+        }
+        return reverseArray;
+      };
+
+      let str = "yogesh";
+      str = str.split("");
+      const result = reverse(str);
+      console.warn(result);
+      // console.log("final data", data);
+    </script>
+  </head>
+  <body>
+    <h1>Reverse</h1>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PushPopFullFunctional</title>
+  </head>
+  <script>
+    let data = [];
+    let currentSize = data.length;
+    let max = 5;
+
+    push = () => {
+      let newVal = document.getElementById("newEl").value;
+      if (currentSize <= 5) {
+        data[currentSize] = newVal;
+        currentSize++;
+        alert(`added ${newVal} `);
+      } else {
+        console.log(`can't push ${newVal}, maximum limit is ${max + 1} `);
+        alert(`can't push ${newVal}, maximum limit is ${max + 1} `);
+      }
+    };
+    pop = () => {
+      if (currentSize > 0) {
+        currentSize -= 1;
+        data.length = currentSize;
+      } else {
+        console.log("stack is already empty");
+        alert("stack is already empty");
+      }
+    };
+    display = () => {
+      console.log(data);
+    };
+
+    document.getElementById("display").innerHTML = `Array: [${data.join(
+      ", "
+    )}]`;
+  </script>
+  <body>
+    <h1>Stack in Javascript</h1>
+    <input type="text" placeholder="Enter stack element" id="newEl" />
+    <button onclick="push()">Add element to stack</button>
+    <button onclick="pop()">Remove element to stack</button>
+    <button onclick="display()">Display All element of stack</button>
+    <div id="display"></div>
+  </body>
+</html>
