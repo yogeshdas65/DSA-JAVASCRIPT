@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queue</title>
+    <script>
+      let queue = [];
+      let maxSize = 5;
+      let currentSize = queue.length;
+
+      function enqueue(item) {
+        queue[currentSize] = item;
+        currentSize++;
+      }
+      function display() {
+        console.log(queue);
+      }
+      function dequeue() {
+        for (let i = 0; i < queue.length; i++) {
+          queue[i] = queue[i + 1];
+        }
+        currentSize--;
+        queue.length = currentSize;
+      }
+      function front() {
+        if (!isEmpty()) {
+          console.log(queue[0]);
+        } else {
+          alert("No item in queue");
+        }
+      }
+      function rear() {
+        if (!isEmpty()) {
+          console.log(queue[currentSize - 1]);
+        } else {
+          alert("No item in queue");
+        }
+      }
+      function isEmpty() {
+        if (currentSize <= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

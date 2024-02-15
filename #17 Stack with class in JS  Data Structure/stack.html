@@ -26,17 +26,22 @@
       }
       pop() {
         if (this.currentSize > 0) {
+
           this.currentSize--;
           this.item.length = this.currentSize;
         } else {
           alert("stack is already empty");
         }
       }
+   
       reverse(arr) {
+        let count = 0
+        
         // console.log(arr)
-        for (let i = 0; arr.length > 0; i++) {
+        for (let i = 0; i < arr.length ; i++) {
+          console.log(count++ , arr[i]);
+          
             
-          console.log(arr[i]);
         }
       }
       display() {
