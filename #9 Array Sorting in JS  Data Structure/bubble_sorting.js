@@ -5,7 +5,10 @@ const data = [
   58, 52, 67, 19, 74, 96, 74, 21, 2, 74, 32, 1, 42, 51, 7, 566, 598, 446,
 ];
 
+let count = 0;
+
 for (let i = 0; i < data.length; i++) {
+  count++
   for (let j = 0; j < data.length; j++) {
     if (data[j] > data[j + 1]) {
       temp = data[j];
