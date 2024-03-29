@@ -1,4 +1,4 @@
-let arr = [12, 11, 13, 5, 6]
+let arr = [12, 11, 13, 6, 65, 96, 1, 9, 987, 321, 4, 2, 5, 8, 87]
 
 function insertionSort(data) {
     let i, current, j;
@@ -10,11 +10,9 @@ function insertionSort(data) {
             j = j - 1;
         }
         data[j + 1] = current
-        console.log(current, data[j]);
     }
+    cnsole.warn(temp);
 }
 
 insertionSort(arr);
 console.warn(arr);
-
-
