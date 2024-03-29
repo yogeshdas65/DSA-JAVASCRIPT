@@ -8,13 +8,14 @@ const data = [
 let count = 0;
 
 for (let i = 0; i < data.length; i++) {
-  count++
+  
   for (let j = 0; j < data.length; j++) {
+    count++
     if (data[j] > data[j + 1]) {
       temp = data[j];
       data[j] = data[j + 1];
       data[j + 1] = temp;
-      console.log("Swaping ->", data[j], data[j + 1], "Sorting", data);
+      console.log(count,"Swaping ->", data[j], data[j + 1], "Sorting", data);
     }
   }
 }
